@@ -33,7 +33,7 @@ let globs = {
 };
 
 gulp.task("scripts", () => {
-  return gulp.src(globs.scripts)
+  return gulp.src(paths.src + "/scripts/main.js")
     .pipe(sourcemaps.init())
     .pipe(jspm({selfExecutingBundle: true}))
     .pipe(rename("theme.js"))
@@ -42,7 +42,7 @@ gulp.task("scripts", () => {
 });
 
 gulp.task("styles", () => {
-  return gulp.src(globs.styles)
+  return gulp.src(paths.src + "/styles/main.scss")
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(autoprefixer())

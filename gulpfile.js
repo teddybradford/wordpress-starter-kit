@@ -23,8 +23,8 @@ let globs = {
   styles: paths.src + "/styles/**/*.scss",
   images: paths.src + "/images/**/*.{jpg,png,gif,svg}",
   fonts: paths.src + "/fonts/**/*.{eot,woff2,woff,ttf,otf,svg}",
-  views: paths.src + "/views/**/*.php",
   templates: paths.src + "/templates/**/*.twig",
+  views: paths.src + "/views/**/*.php",
   files: [
     paths.src + "/functions.php",
     paths.src + "/style.css",
@@ -62,9 +62,9 @@ gulp.task("fonts", () => {
     .pipe(gulp.dest(paths.dest + "/fonts"));
 });
 
-gulp.task("files", () => {
-  return gulp.src(globs.files)
-    .pipe(gulp.dest(paths.dest));
+gulp.task("templates", () => {
+  return gulp.src(globs.templates)
+    .pipe(gulp.dest(paths.dest + "/templates"));
 });
 
 gulp.task("views", () => {
@@ -72,9 +72,9 @@ gulp.task("views", () => {
     .pipe(gulp.dest(paths.dest));
 });
 
-gulp.task("templates", () => {
-  return gulp.src(globs.templates)
-    .pipe(gulp.dest(paths.dest + "/templates"));
+gulp.task("files", () => {
+  return gulp.src(globs.files)
+    .pipe(gulp.dest(paths.dest));
 });
 
 gulp.task("clean", (done) => {
@@ -86,9 +86,9 @@ gulp.task("build", [
   "styles",
   "images",
   "fonts",
-  "files",
+  "templates",
   "views",
-  "templates"
+  "files"
 ]);
 
 gulp.task("watch", () => {
@@ -96,9 +96,9 @@ gulp.task("watch", () => {
   gulp.watch(globs.styles, ["styles"]);
   gulp.watch(globs.images, ["images"]).on("change", browserSync.reload);
   gulp.watch(globs.fonts, ["fonts"]).on("change", browserSync.reload);
-  gulp.watch(globs.files, ["files"]).on("change", browserSync.reload);
-  gulp.watch(globs.views, ["views"]).on("change", browserSync.reload);
   gulp.watch(globs.templates, ["templates"]).on("change", browserSync.reload);
+  gulp.watch(globs.views, ["views"]).on("change", browserSync.reload);
+  gulp.watch(globs.files, ["files"]).on("change", browserSync.reload);
 });
 
 gulp.task("serve", () => {

@@ -23,7 +23,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
-    "jspm": "^0.16.14"
+    "jspm": "^0.16.14",
+    "portfinder": "^0.4.0"
   },
   "jspm": {
     "dependencies": {

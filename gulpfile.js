@@ -7,6 +7,7 @@ let sourcemaps = require("gulp-sourcemaps");
 let jspm = require("gulp-jspm");
 let sass = require("gulp-sass");
 let autoprefixer = require("gulp-autoprefixer");
+let portfinder = require("portfinder");
 let connect = require("gulp-connect-php");
 let browserSync = require("browser-sync").create();
 
@@ -101,13 +102,15 @@ gulp.task("watch", () => {
 });
 
 gulp.task("serve", () => {
-  connect.server({
-    port: 1337,
-    base: "wordpress",
-    stdio: "ignore"
-  }, () => {
-    browserSync.init({
-      proxy: "127.0.0.1:1337"
+  portfinder.getPort((err, port) => {
+    connect.server({
+      port: port,
+      base: "wordpress",
+      stdio: "ignore"
+    }, () => {
+      browserSync.init({
+        proxy: "127.0.0.1:" + port
+      });
     });
   });
 });

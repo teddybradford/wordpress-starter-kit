@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="no-js" {{ site.language_attributes }}>
+  <head>
+    <meta charset="{{ site.charset }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description }}">
+    <title>
+      {% if wp_title %}
+        {{ wp_title }} — {{ site.name }}
+      {% else %}
+        {{ site.name }}
+      {% endif %}
+    </title>
+    <link rel="pingback" href="{{ site.pingback_url }}">
+    {{ function("wp_head") }}
+  </head>
+  <body class="{{ body_class }}">
+    {% block content %}{% endblock %}
+    {{ function("wp_footer") }}
+  </body>
+</html>

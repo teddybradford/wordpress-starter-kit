@@ -1,0 +1,16 @@
+:root {
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  text-decoration: inherit;
+}

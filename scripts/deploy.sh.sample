@@ -1,0 +1,12 @@
+#!/bin/bash
+
+HOST=localhost
+USER=root
+
+WP_DIR=wordpress
+THEME_NAME=my-theme
+
+SRC=$WP_DIR/wp-content/themes/$THEME_NAME
+DEST=/home/$USER/html/wp-content/themes
+
+rsync -avz -e "ssh" $SRC $USER@$HOST:$DEST

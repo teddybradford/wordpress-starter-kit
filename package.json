@@ -29,7 +29,8 @@
   "jspm": {
     "configFile": "jspm-config.js",
     "dependencies": {
-      "fastclick": "npm:fastclick@^1.0.6"
+      "fastclick": "npm:fastclick@^1.0.6",
+      "sanitize.css": "npm:sanitize.css@^3.0.0"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",

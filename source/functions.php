@@ -6,6 +6,7 @@ if (!class_exists("Timber")) {
       the plugin in <a href='" . esc_url(admin_url("plugins.php#timber")) . "'>
       /wp-admin/plugins.php</a>.</p></div>";
   });
+
   return;
 }
 
@@ -16,12 +17,15 @@ class MyTimberSite extends TimberSite {
     add_theme_support("post-formats");
     add_theme_support("post-thumbnails");
     add_theme_support("menus");
+
     add_filter("show_admin_bar", array($this, "__return_false"));
+
     add_action("wp_enqueue_scripts", array($this, "enqueue_scripts"));
     add_action("init", array($this, "register_post_types"));
     add_action("init", array($this, "register_taxonomies"));
     add_filter("timber_context", array($this, "add_to_context"));
     add_filter("get_twig", array($this, "add_to_twig"));
+
     parent::__construct();
   }
 
@@ -53,11 +57,13 @@ class MyTimberSite extends TimberSite {
   function add_to_context($context) {
     $context["site"] = $this;
     $context["menu"] = new TimberMenu();
+
     return $context;
   }
 
   function add_to_twig($twig) {
     $twig->addExtension(new Twig_Extension_StringLoader());
+
     return $twig;
   }
 }

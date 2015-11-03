@@ -46,9 +46,8 @@ gulp.task("styles", () => {
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(rename("theme.css"))
+    .pipe(rename("style.css"))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest(paths.dest + "/styles"))
     .pipe(browserSync.stream({match: "**/*.css"}));
 });
 

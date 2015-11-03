@@ -18,7 +18,6 @@ class MyTimberSite extends TimberSite {
     add_theme_support("menus");
     add_filter("show_admin_bar", array($this, "__return_false"));
     add_action("wp_enqueue_scripts", array($this, "enqueue_scripts"));
-    add_action("wp_enqueue_scripts", array($this, "enqueue_styles"));
     add_action("init", array($this, "register_post_types"));
     add_action("init", array($this, "register_taxonomies"));
     add_filter("timber_context", array($this, "add_to_context"));
@@ -27,21 +26,19 @@ class MyTimberSite extends TimberSite {
   }
 
   function enqueue_scripts() {
-    wp_enqueue_script(
-      "theme",
-      get_template_directory_uri() . "/scripts/theme.js",
-      array("jquery"),
-      filemtime(get_template_directory() . "/scripts/theme.js"),
-      true
-    );
-  }
-
-  function enqueue_styles() {
     wp_enqueue_style(
-      "theme",
-      get_template_directory_uri() . "/styles/theme.css",
+      "theme-style",
+      get_stylesheet_uri(),
       array(),
-      filemtime(get_stylesheet_directory() . "/styles/theme.css")
+      filemtime(get_template_directory() . "/style.css")
+    );
+
+    wp_enqueue_script(
+      "theme-script",
+      get_template_directory_uri() . "/script.js",
+      array("jquery"),
+      filemtime(get_template_directory() . "/script.js"),
+      true
     );
   }
 

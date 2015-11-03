@@ -4,6 +4,7 @@ if (!class_exists("Timber")) {
   echo "<div class='error'><p>Timber is not activated. Make sure you activate
     the plugin in <a href='" . esc_url(admin_url("plugins.php#timber")) . "'>
     /wp-admin/plugins.php</a>.</p></div>";
+
   return;
 }
 

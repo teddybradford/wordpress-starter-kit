@@ -49,10 +49,10 @@ gulp.task("templates", () => {
 gulp.task("styles", () => {
   return gulp.src(paths.src + "/styles/main.scss")
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(sass().on("error", sass.logError))
     .pipe(autoprefixer())
     .pipe(rename("style.css"))
-    .pipe(sourcemaps.write("."))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream({match: "**/*.css"}));
 });

@@ -6,7 +6,7 @@ let rename = require("gulp-rename");
 let sourcemaps = require("gulp-sourcemaps");
 let sass = require("gulp-sass");
 let autoprefixer = require("gulp-autoprefixer");
-let jspm = require("gulp-jspm");
+let Builder = require("systemjs-builder");
 let portfinder = require("portfinder");
 let connect = require("gulp-connect-php");
 let browserSync = require("browser-sync").create();
@@ -58,12 +58,13 @@ gulp.task("styles", () => {
 });
 
 gulp.task("scripts", () => {
-  return gulp.src(paths.src + "/scripts/main.js")
-    .pipe(sourcemaps.init())
-    .pipe(jspm({selfExecutingBundle: true}))
-    .pipe(rename("script.js"))
-    .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest(paths.dest));
+  new Builder({defaultJSExtensions: true})
+    .buildStatic(paths.src + "/scripts/main.js", paths.dest + "/script.js", {
+      sourceMaps: "inline"
+    })
+    .catch((err) => {
+      console.log("SystemJS Builder:", err);
+    });
 });
 
 gulp.task("images", () => {

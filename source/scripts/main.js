@@ -1,5 +1,5 @@
 "use strict";
 
-import attachFastClick from "fastclick";
+import FastClick from "../../node_modules/fastclick/lib/fastclick";
 
-attachFastClick(document.body);
+FastClick.attach(document.body);

@@ -4,7 +4,6 @@ Thumbs.db
 
 npm-debug.log*
 node_modules
-jspm_packages
 
 /config.sh
 /wordpress

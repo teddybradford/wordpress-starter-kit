@@ -109,7 +109,7 @@ gulp.task("serve", () => {
       stdio: "ignore"
     }, () => {
       browserSync.init({
-        proxy: "127.0.0.1:" + port
+        proxy: "localhost:" + port
       });
     });
   });

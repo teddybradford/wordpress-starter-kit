@@ -5,4 +5,12 @@
  * Version: 1.0
  */
 
-@import "../../jspm_packages/npm/sanitize.css@3.0.0/sanitize";
+@import "../../node_modules/inuit-defaults/settings.defaults";
+
+@import "../../node_modules/inuit-functions/tools.functions";
+@import "../../node_modules/inuit-mixins/tools.mixins";
+
+@import "../../node_modules/inuit-normalize/generic.normalize";
+@import "../../node_modules/inuit-box-sizing/generic.box-sizing";
+
+@import "../../node_modules/inuit-page/base.page";

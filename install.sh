@@ -9,11 +9,11 @@ source "$DIR/config.sh"
 if [ ! -d "wordpress" ]; then
   curl -o wordpress.zip https://wordpress.org/latest.zip
   unzip -q -o wordpress.zip
-  mv wordpress "$WP_DIR"
   rm wordpress.zip
+  cp -R wordpress/* "$WP_DIR"
+  rm -rf wordpress
 fi
 
-# Install plugins
 function install_plugin {
   if [ ! -d "$WP_DIR/wp-content/plugins/$1" ]; then
     curl -o "$1.zip" $2
@@ -21,6 +21,8 @@ function install_plugin {
     rm "$1.zip"
   fi
 }
+
+# Install plugins
 install_plugin sqlite-integration https://downloads.wordpress.org/plugin/sqlite-integration.zip
 install_plugin timber-library https://downloads.wordpress.org/plugin/timber-library.zip
 install_plugin post-types-order https://downloads.wordpress.org/plugin/post-types-order.zip

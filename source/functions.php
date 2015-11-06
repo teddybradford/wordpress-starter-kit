@@ -1,5 +1,9 @@
 <?php
 
+if (WP_DEBUG) {
+  header("Access-Control-Allow-Origin: *");
+}
+
 if (!class_exists("Timber")) {
   add_action("admin_notices", function () {
     echo "<div class='error'><p>Timber is not activated. Make sure you activate

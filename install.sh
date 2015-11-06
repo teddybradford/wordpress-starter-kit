@@ -46,8 +46,3 @@ fi
 if [ ! -d "node_modules" ]; then
   npm install
 fi
-
-# Install theme dependencies
-if [ ! -d "jspm_packages" ]; then
-  jspm install
-fi

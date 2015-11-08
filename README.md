@@ -1,6 +1,6 @@
 # WordPress Development Kit
 
-## Setup
+## Configuration
 
 Make a copy of `config-sample.sh` and name it `config.sh`, then modify its
 configuration variables appropriately.

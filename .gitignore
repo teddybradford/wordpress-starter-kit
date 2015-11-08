@@ -4,6 +4,7 @@ Thumbs.db
 
 npm-debug.log*
 node_modules
+wp-cli.phar
 
 /config.sh
 /wordpress

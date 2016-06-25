@@ -6,12 +6,11 @@ WP_DB_USER=root
 WP_DB_PASS=root
 
 # General
-WP_URL=localhost:8000
+WP_URL=127.0.0.1:3100
 WP_TITLE="My WordPress Site"
 WP_ADMIN_USER=root
 WP_ADMIN_PASS=root
 WP_ADMIN_EMAIL=root@wordpress.dev
-WP_THEME=my-theme
 
 # Remote server (for deployment)
 REMOTE_HOST=

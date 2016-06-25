@@ -2,20 +2,20 @@
 
 ## Configuration
 
-Make a copy of `config-sample.sh` and name it `config.sh`, then modify its
+Make a copy of `scripts/config-sample.sh` and name it `scripts/config.sh`, then set its
 configuration variables appropriately.
 
 ## Installation
 
-Run `./install.sh` on a command line to install WordPress, core plugins, and all
-necessary development dependencies.
+Run `./scripts/install-wordpress` on a command line to install WordPress and essential plugins.
+Then run `npm install` to install all required development dependencies.
 
 ## Development
 
-Run `gulp` on a command line to start the development server and build tasks.
+Run `npm start` on a command line to launch the development server and run the build tasks.
 
 ## Deployment
 
-For automated deployment of your WordPress theme to a remote server via SSH,
-simply run `./deploy.sh` on a command line and your local build should sync to
-the remote host specified in `config.sh`.
+For automated deployment of the WordPress theme to a remote server via SSH, simply run
+`./scripts/deploy.sh` on a command line and the local build should sync to the remote host
+specified in `scripts/config.sh`.

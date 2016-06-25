@@ -1,0 +1,4 @@
+Theme Name: Custom
+Author: Bearform
+Author URI: https://bearform.io/
+Version: 1.0

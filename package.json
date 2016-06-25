@@ -1,8 +1,8 @@
 {
   "name": "wp-dev-kit",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "WordPress development kit",
-  "author": "Bearform, LLC (https://www.bearform.io)",
+  "author": "Bearform (https://bearform.io/)",
   "license": "ISC",
   "private": true,
   "repository": {
@@ -13,20 +13,43 @@
     "url": "https://github.com/bearform/wp-dev-kit/issues"
   },
   "homepage": "https://github.com/bearform/wp-dev-kit#readme",
-  "dependencies": {
-    "fastclick": "^1.0.6",
-    "inuit-starter-kit": "^0.2.9"
+  "scripts": {
+    "start": "webpack --watch"
   },
+  "dependencies": {},
   "devDependencies": {
-    "browser-sync": "^2.9.12",
-    "del": "^2.0.2",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-connect-php": "^0.0.7",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.1.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "portfinder": "^0.4.0",
-    "systemjs-builder": "^0.14.10"
+    "babel-loader": "^6.2.4",
+    "browser-sync": "^2.13.0",
+    "browser-sync-webpack-plugin": "^1.0.3",
+    "clean-webpack-plugin": "^0.1.9",
+    "css-loader": "^0.23.1",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb-base": "^3.0.1",
+    "eslint-plugin-import": "^1.9.2",
+    "file-loader": "^0.9.0",
+    "node-sass": "^3.8.0",
+    "sass-loader": "^3.2.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-validator": "^2.2.0"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "rules": {
+      "quotes": [
+        2,
+        "double",
+        "avoid-escape"
+      ],
+      "comma-dangle": [
+        2,
+        "never"
+      ]
+    }
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   }
 }

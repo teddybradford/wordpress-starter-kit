@@ -43,7 +43,7 @@ const config = {
       proxy: `http://${server.proxyHost}:${server.proxyPort}/`,
       notify: false
     }, () => {
-      exec(`php -S ${server.proxyHost}:${server.proxyPort} -t ${server.proxyBaseDir}`);
+      exec(`php -S ${server.proxyHost}:${server.proxyPort} -t "${server.proxyBaseDir}"`);
     })
   ],
   devtool: "cheap-eval-source-map"

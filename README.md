@@ -1,21 +1,32 @@
 # WordPress Development Kit
 
-## Configuration
-
-Make a copy of `scripts/config-sample.sh` and name it `scripts/config.sh`, then set its
-configuration variables appropriately.
-
 ## Installation
 
-Run `./scripts/install-wordpress` on a command line to install WordPress and essential plugins.
-Then run `npm install` to install all required development dependencies.
+1.  Edit `docker-compose.yml` and add your Advanced Custom Fields PRO license
+    key to the `ACF_PRO_KEY` field.
+
+2.  Install [Docker][].
+
+3.  Run `docker-compose up` to create your development environment. Be patient;
+    this may take a little while.
+
+4.  Navigate to [http://localhost:8080][localhost] and install WordPress.
+
+5.  Activate Advanced Custom Fields PRO and Timber plugins.
+
+6.  Run `yarn install` to install project dependencies.
+
+[Docker]: https://store.docker.com/search?type=edition&offering=community
+[localhost]: http://localhost:8080
+
 
 ## Development
 
-Run `npm start` on a command line to launch the development server and run the build tasks.
+1.  Run `docker-compose up` to bring up your development environment (if it's
+    not up already).
 
-## Deployment
+2.  Run `yarn run start` to start the watch and build tasks.
 
-For automated deployment of the WordPress theme to a remote server via SSH, simply run
-`./scripts/deploy.sh` on a command line and the local build should sync to the remote host
-specified in `scripts/config.sh`.
+3.  Activate "Custom" WordPress theme.
+
+4.  Get coding!

@@ -1,8 +1,8 @@
 {
   "name": "wp-dev-kit",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "WordPress development kit",
-  "author": "Bearform (https://bearform.io/)",
+  "author": "Bearform (https://bearform.xyz)",
   "license": "ISC",
   "private": true,
   "repository": {
@@ -14,44 +14,26 @@
   },
   "homepage": "https://github.com/bearform/wp-dev-kit#readme",
   "scripts": {
-    "start": "webpack --watch"
+    "start": "gulp",
+    "build": "gulp build"
   },
-  "dependencies": {},
   "devDependencies": {
-    "babel-core": "^6.10.4",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.9.0",
-    "browser-sync": "^2.13.0",
-    "browser-sync-webpack-plugin": "^1.0.3",
-    "clean-webpack-plugin": "^0.1.9",
-    "css-loader": "^0.23.1",
-    "eslint": "^2.13.1",
-    "eslint-config-airbnb-base": "^3.0.1",
-    "eslint-plugin-import": "^1.9.2",
-    "file-loader": "^0.9.0",
-    "node-sass": "^3.8.0",
-    "sass-loader": "^3.2.1",
-    "style-loader": "^0.13.1",
-    "webpack": "^1.13.1",
-    "webpack-validator": "^2.2.0"
-  },
-  "eslintConfig": {
-    "extends": "airbnb-base",
-    "rules": {
-      "quotes": [
-        2,
-        "double",
-        "avoid-escape"
-      ],
-      "comma-dangle": [
-        2,
-        "never"
-      ]
-    }
-  },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
+    "babel-preset-env": "^1.5.1",
+    "babel-register": "^6.24.1",
+    "browser-sync": "^2.18.12",
+    "cssnano": "^3.10.0",
+    "del": "^2.2.2",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-flatten": "^0.3.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "postcss-cssnext": "^2.11.0",
+    "postcss-import": "^10.0.0",
+    "sanitize.css": "^5.0.0",
+    "tachyons": "^4.7.4"
   }
 }

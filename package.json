@@ -2,7 +2,7 @@
   "name": "wp-dev-kit",
   "version": "5.0.0",
   "description": "WordPress development kit",
-  "author": "Bearform (https://bearform.xyz)",
+  "author": "Bearform LLC (https://bearform.xyz)",
   "license": "ISC",
   "private": true,
   "repository": {
@@ -18,11 +18,11 @@
     "build": "gulp build"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.5.1",
+    "babel-preset-env": "^1.5.2",
     "babel-register": "^6.24.1",
     "browser-sync": "^2.18.12",
     "cssnano": "^3.10.0",
-    "del": "^2.2.2",
+    "del": "^3.0.0",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-babel": "^6.1.2",
     "gulp-flatten": "^0.3.1",

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="h-100" {{ site.language_attributes }}>
+<html {{ site.language_attributes }}>
   <head>
     <meta charset="{{ site.charset }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,8 @@
     {{ wp_head }}
   </head>
 
-  <body class="{{ body_class }} h-100 lh-copy sans-serif dark-gray">
-    <div class="flex flex-column h-100">
+  <body class="{{ body_class }} lh-copy sans-serif dark-gray">
+    <div class="">
       <div class="bg-blue white">
         <header class="mw8 center pv4 ph2">
           {% block header %}
@@ -27,9 +27,9 @@
         </header>
       </div>
 
-      <div class="flex-auto bg-light-gray">
-        <div class="flex-m mw8 center pv4 ph2">
-          <main class="w-two-thirds-m mb5 mb0-m mr4-m">
+      <div class="bg-light-gray">
+        <div class="flex-m mw8 center ph2">
+          <main class="{% if widgets %} w-two-thirds-m mr4-m {% endif %} mb5 mb0-m">
             {% block content %}{% endblock %}
           </main>
 

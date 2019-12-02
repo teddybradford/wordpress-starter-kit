@@ -1,7 +1,7 @@
 {
-  "name": "wp-dev-kit",
+  "name": "wordpress-starter-kit",
   "version": "5.0.0",
-  "description": "WordPress development kit",
+  "description": "Kickstart development of your next WordPress site",
   "author": "Bearform LLC (https://bearform.xyz)",
   "license": "ISC",
   "private": true,

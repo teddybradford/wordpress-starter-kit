@@ -8,7 +8,7 @@ import babel from "gulp-babel";
 import uglify from "gulp-uglify";
 import postcss from "gulp-postcss";
 import atImport from "postcss-import";
-import cssnext from "postcss-cssnext";
+import presetEnv from "postcss-preset-env";
 import cssnano from "cssnano";
 import browserSync from "browser-sync";
 
@@ -75,9 +75,7 @@ export const styles = () => gulp.src(paths.styles.src)
   .pipe(plumber())
   .pipe(postcss([
     atImport(),
-    cssnext({
-      browsers: ["last 2 versions"]
-    }),
+    presetEnv(),
     cssnano({
       autoprefixer: false
     })

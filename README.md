@@ -1,4 +1,4 @@
-# WordPress Development Kit
+# WordPress Starter Kit
 
 ## Getting Started
 
